@@ -1,0 +1,23 @@
+<div class="flashes">
+    <% if (flashMessages) { %>
+        <% if (flashMessages.success) { %>
+            <div class="flash success">
+                <%= flashMessages.success %>
+            </div>
+            <% } else if (flashMessages.error) { %>
+                <div class="flash error">
+                    <%= flashMessages.error %>
+                </div>
+                <% } %>
+                    <% } %>
+</div>
+<% if (loggedIn) { %>
+    Logged in as <a href="<%=`/users/${currentUser._id}`%>">
+        <%= currentUser.fullName %>
+    </a>
+    <%} else {%>
+        <a href="/users/login">Log In</a>
+        <% } %>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/js/recipeApp.js"></script>
